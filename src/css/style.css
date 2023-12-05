@@ -36,20 +36,20 @@ select{
 {
     height: 100%;
     background-color: #dcf2fb;
-    background-image: url(http://getfirebomb.com/css/images/bg-dither.gif);
+    background-image: url(https://i.ibb.co/17fb9T6/bg-dither.gif);
     background-position: top left;
     background-repeat: repeat-x;
 }
 
     .boom .container
     {
-        background-image: url(http://getfirebomb.com/css/images/bg-dither-boom.gif);
+        background-image: url(https://i.ibb.co/58b264R/bg-dither-boom.gif);
         background-color: #ffead8;
     }
 
 #boomBGLoader
 {
-    background-image: url(http://getfirebomb.com/css/images/bg-dither-boom.gif);
+    background-image: url(https://i.ibb.co/58b264R/bg-dither-boom.gif);
 }
 
 #centered {
@@ -93,7 +93,6 @@ select{
     top: 0;
     width: 192px;
     height: 144px;
-    /*background: url(http://getfirebomb.com/css/images/bomb-logo.gif);*/
 }
 
 #label{
