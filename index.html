@@ -2,31 +2,38 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>C4-Explode!</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Bomb timer C4-Explode!</title>
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <div class="container">
 
+
+    <select id="dropdown">
+      <option value="bomb.mp3">Level 1: Easy</option>
+      <option value="bomb2x.mp3">Level 2: Medium</option>
+      <option value="bomb3x.mp3">Level 3: Hard</option>
+      <option value="challenge.mp3">1 min challenge</option>
+      <option value="bomb2x.mp3">IMPOSSIBLE</option>
+    </select>
+
     <div id="centered">
 
-      <select id="dropdown">
-        <option value="bomb.mp3">Regular</option>
-        <option value="bomb2x.mp3">2X Regular</option>
-        <option value="bomb3x.mp3">3X Regular</option>
-        <option value="challenge.mp3">1 min challenge</option>
-        <option value="bomb2x.mp3">IMPOSSIBLE</option>
-      </select>
-
-        <div id="button"> Click Me...</div>
+        <div id="button"> Press Here...</div>
 
         <div id="bomb"></div>
 
         <h1 id="label">...</h1>
 
-        <audio id="clickSound" src="./bomb.mp3" preload="auto"></audio>
+        <audio id="clickSounda" src="/src/assets/bomb.mp3" preload="auto"></audio>
+        <audio id="clickSoundb" src="/src/assets/bomb2x.mp3" preload="auto"></audio>
+        <audio id="clickSoundc" src="/src/assets/bomb3x.mp3" preload="auto"></audio>
+        <audio id="clickSoundd" src="/src/assets/challenge.mp3" preload="auto"></audio>
+        <audio id="clickSounde" src="/src/assets/impossible.mp3" preload="auto"></audio>
+
 
     </div>
 
@@ -46,7 +53,7 @@
 
 </p>
 
-  <script  src="./script.js"></script>
+  <script  src="/src/js/script.js"></script>
 
 </body>
 </html>

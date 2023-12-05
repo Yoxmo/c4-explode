@@ -1,1 +1,3 @@
-# finsihedwip
+# Bomb Game
+
+More info soon...

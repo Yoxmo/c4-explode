@@ -334,18 +334,57 @@ function particles() {
     }
 }
 
-function startBomb(){
+function startCountdown(durationInSeconds) {
+
+    const countdownElement = document.getElementById('label');
+
+    let timer = durationInSeconds; // using let to alter this time...
+
+    countdownElement.style.display = "none";
+    
+    function updateTimer() {
+
+        countdownElement.style.display = "block";
+
+        const hours = Math.floor(timer / 3600);
+        const minutes = Math.floor((timer % 3600) / 60);
+        const seconds = timer % 60;
+
+        countdownElement.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    
+
+        if (timer > 0) {
+            timer--;
+
+        } else {
+            clearInterval(intervalId);
+
+            document.querySelector("#bomb").click();
+        }
+    }
+
+    updateTimer();
+
+    const intervalId = setInterval(updateTimer, 1000);
+}
+
+function startBomb(option){
 
     document.querySelector("#button").style.display = "none"; // hides the bomb button.
+    document.querySelector("select").style.display = "none"; // hides the select button.
+
 
     document.querySelector("#bomb").style.display = "block"; //shows the timer and bomb to their initial css.
     document.querySelector("#label").style.display = "flex";
 
-    var audioElement = document.getElementById('clickSound'); // bomb noise starts now...
-
+    var audioElement = document.getElementById(option[0]); // bomb noise starts now...
     audioElement.play();
 
+    startCountdown(option[1]); // starts the timer...
+
+
 }
+
 
 if ( !window.requestAnimationFrame ) {
 
@@ -373,7 +412,34 @@ document.addEventListener('DOMContentLoaded', function () {
     if (buttonElement) {
 
         buttonElement.addEventListener('click', function () {
-            startBomb();
+
+            let option = []; // the total options for bomb.
+            let options = document.querySelector("select").selectedIndex; // selected in selection element.
+        
+
+            switch (options) {
+                case 0:
+                    option = ["clickSounda" , 899]
+                    break;
+                case 1:
+                    option = ["clickSoundb" , 449]
+                    break;
+                case 2:
+                    option = ["clickSoundc" , 225]
+                    break;
+                case 3:
+                    option = ["clickSoundd" , 37]
+                    break;
+                case 4:
+                    option = ["clickSounde" , 17]
+                    break;
+                default:
+                    option = ["clickSounda" , 889]
+                    break;
+            }
+
+            console.log("[*] timer: ", option , options)
+            startBomb(option);
         });
     }
 });
