@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>C4-Explode!</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+
+    <div id="centered">
+
+      <select id="dropdown">
+        <option value="bomb.mp3">Regular</option>
+        <option value="bomb2x.mp3">2X Regular</option>
+        <option value="bomb3x.mp3">3X Regular</option>
+        <option value="challenge.mp3">1 min challenge</option>
+        <option value="bomb2x.mp3">IMPOSSIBLE</option>
+      </select>
+
+        <div id="button"> Click Me...</div>
+
+        <div id="bomb"></div>
+
+        <h1 id="label">...</h1>
+
+        <audio id="clickSound" src="./bomb.mp3" preload="auto"></audio>
+
+    </div>
+
+    
+</div>
+
+<div id="boomBGLoader" class="hide"></div>
+
+<p style="
+    position: absolute;
+    font-size: x-small;
+    margin-left: 15px;
+    bottom: 0px;
+">
+
+    credit to: @Zachstronaut for bomb graphics. <br> team 4 - c4 explode
+
+</p>
+
+  <script  src="./script.js"></script>
+
+</body>
+</html>
